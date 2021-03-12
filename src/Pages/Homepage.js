@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import img from './styles/assets/08 1.png'
+import img from '../styles/assets/08 1.png'
 
 function Homepage () {
     return (
@@ -21,12 +21,10 @@ function Homepage () {
                         that we are subject from news, and allowing us to<br/>
                         keep up with what’s going on in the world without<br/>
                         the downsides and at your own tempo.</h3>
+                        <span className="linkContainer"><Link to="newspage">Start now</Link></span>
                 </div>
             </div>
-            <div>
-                <img alt="Lamp" src={img}></img>
-                <Link to="newspage">Start now</Link>
-            </div>
+            <img alt="Lamp" src={img}></img>
         </div>
     )
 }

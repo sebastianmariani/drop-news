@@ -4,15 +4,19 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './app.scss';
 
 // Components
-import Homepage from './Homepage';
-import Newspage from './Newspage';
+import Homepage from './Pages/Homepage';
+import Newspage from './Pages/Newspage';
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Homepage}></Route>
-        <Route exact path="/newspage" component={Newspage}></Route>
+        <Route path="/newspage">
+          <Navbar/>
+          <Newspage/>
+        </Route>
       </Switch>
     </BrowserRouter>
   );
