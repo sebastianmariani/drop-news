@@ -1,31 +1,38 @@
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
-function Newspage (props) {
+function Newspage() {
     const [news, setNews] = useState([])
-    const [page, setPage] = useState(1);
+    // const [page, setPage] = useState(1);
 
     useEffect(() => {
-        fetch(`https://newsapi.org/v2/top-headlines?country=${props.country}&apiKey=e782df4c0a2e4a73aebfa7a8137da492
-        ${process.env.REACT_APP_API_KEY}${page}`)
-        .then(res => res.json())
-        .then(data => {
-            setNews((prev) => 
-            prev.concat(data.results))
-        })
-        .catch((err) => 
-            console.log(err))
-    }, [page])
+        fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.REACT_APP_API_KEY}`)
+            .then(res => res.json())
+            .then(data => {
+                // setNews((prev) => 
+                // prev.concat(data.results))
+                setNews(data.articles)
+            })
+            .catch((err) =>
+                console.log(err))
+    }, [])
 
-    window.onscroll = function() {
-        if ((window.innerHeight + window.scrollY * 1.1) >= document.body.offsetHeight) {
-            setPage(page + 1)
-        }
-    };
+    // window.onscroll = function() {
+    //     if ((window.innerHeight + window.scrollY * 1.1) >= document.body.offsetHeight) {
+    //         setPage(page + 1)
+    //     }
+    // };
     return (
         <div>
-            <p>Homepage</p>
+            {news.map((article) => {
+                return (
+                    <div key={article}>
+                        <h4>{article.title}</h4>
+                    </div>
+                )
+            })}
         </div>
+
     )
 }
 

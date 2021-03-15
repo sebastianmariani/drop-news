@@ -9,7 +9,7 @@ function Navbar () {
     }
     const handleChangeCategories = (e) => {
         setCategories(prev => {
-            prev.push(e.target.value)
+            // prev.push(e.target.value)
         })
         console.log(categories)
     }
@@ -21,13 +21,34 @@ function Navbar () {
             <div className="newsCategory">
                 <h4>Category</h4>
                 <div className="categories">
-                    <button onSelect={handleChangeCategories} value="businnes">business</button>
-                    <button onSelect={handleChangeCategories} value="entertainment">entertainment</button>
-                    <button onSelect={handleChangeCategories} value="technology">technology</button>
-                    <button onSelect={handleChangeCategories} value="health">health</button>
-                    <button onSelect={handleChangeCategories} value="science">science</button>
-                    <button onSelect={handleChangeCategories} value="sports">sports</button>
-                    <button onSelect={handleChangeCategories} value="general">general</button>
+                    <input type="checkbox"  value="business" id="business" onChange={handleChangeCategories}/>
+                    <label htmlFor="business">
+                        businnes
+                    </label>
+                    <input type="checkbox"  value="entertainment" id="entertainment" onChange={handleChangeCategories}/>
+                    <label htmlFor="entertainment">
+                        entertainment
+                    </label>
+                    <input type="checkbox"  value="technology" id="technology" onChange={handleChangeCategories}/>
+                    <label htmlFor="technology">
+                        technology
+                    </label>
+                    <input type="checkbox"  value="health" id="health" onChange={handleChangeCategories}/>
+                    <label htmlFor="health">
+                        health
+                    </label>
+                    <input type="checkbox"  value="science" id="science" onChange={handleChangeCategories}/>
+                    <label htmlFor="science">
+                        science
+                    </label>
+                    <input type="checkbox"  value="sports" id="sports" onChange={handleChangeCategories}/>
+                    <label htmlFor="sports">
+                        sports
+                    </label>
+                    <input type="checkbox"  value="general" id="general"/>
+                    <label htmlFor="general">
+                        general
+                    </label>
                 </div>
             </div>
             <div className="countrySelect">
