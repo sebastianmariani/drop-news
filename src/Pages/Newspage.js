@@ -23,7 +23,7 @@ function Newspage() {
     //     }
     // };
     return (
-        <div>
+        <div className="news">
             {news.map((article) => {
                 return (
                     <div key={article}>
