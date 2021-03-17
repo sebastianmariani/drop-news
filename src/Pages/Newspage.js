@@ -26,8 +26,11 @@ function Newspage() {
         <div className="news">
             {news.map((article) => {
                 return (
-                    <div key={article}>
-                        <h4>{article.title}</h4>
+                    <div className="article">
+                        <div className="linkToArticle"><a target="blank" href={article.url}>{article.title}</a></div>
+                        <div className="content">
+
+                        </div>
                     </div>
                 )
             })}

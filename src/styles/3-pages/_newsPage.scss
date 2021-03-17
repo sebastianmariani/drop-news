@@ -1,3 +1,37 @@
 .news {
     margin-left: 20px;
 }
+.article {
+    margin: 5% 0;
+}
+.linkToArticle {
+    position: relative;
+    font-family: boldFont;
+    z-index: 1;
+    a {
+        padding: 10px;
+        display: flex;
+        text-decoration: none;
+        transition: color 300ms ease-in-out;
+        color: black;
+        &:hover{
+            color: white;
+        }
+    }
+    &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    z-index: -1;
+    transition: transform 300ms ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+    }
+    &:hover::before{
+    transform: scaleX(1);
+    }
+}
