@@ -1,4 +1,5 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { DataProvider } from './Context/ContextData';
 
 // Style
 import './app.scss';
@@ -12,11 +13,13 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Homepage}></Route>
-        <Route path="/newspage">
-          <Navbar/>
-          <Newspage/>
-        </Route>
+        <DataProvider>
+          <Route exact path="/" component={Homepage}></Route>
+          <Route path="/newspage">
+            <Navbar/>
+            <Newspage/>
+          </Route>
+        </DataProvider>
       </Switch>
     </BrowserRouter>
   );

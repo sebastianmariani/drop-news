@@ -1,19 +1,22 @@
-import {useState} from 'react';
+import {useContext} from 'react';
+import { DataContext } from '../Context/ContextData';
 
 function Navbar () {
-    const [country, setCountry] = useState('gb')
-    const [categories, setCategories] = useState([])
+    const [searchCriteria, setSearchCriteria, country, setCountry, keyword, setKeyword] = useContext(DataContext);
 
     const handleChangeCountry = (e) => {
         setCountry(e.target.value)
     }
     const handleChangeCategories = (e) => {
-        setCategories(prev => {
-            // prev.push(e.target.value)
-        })
-        console.log(categories)
+        setSearchCriteria(prev => [...prev, e.target.value])
+        console.log(searchCriteria)
     }
-    
+    const handleSpecificSearch = (e) => {
+        if(e.key === 'Enter'){
+            console.log(keyword)
+            setKeyword(e.target.value)
+        }
+    }
     
     return (
         <div className="navbar">
@@ -66,7 +69,7 @@ function Navbar () {
                     <option value="nl">NL</option>
                 </select>
             </div>
-            <input type="text" placeholder="Search..."></input>
+            <input type="text" placeholder="Search..." onKeyPress={handleSpecificSearch}></input>
         </div>
     )
 }
