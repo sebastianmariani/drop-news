@@ -2,74 +2,47 @@ import {useContext} from 'react';
 import { DataContext } from '../Context/ContextData';
 
 function Navbar () {
-    const [searchCriteria, setSearchCriteria, country, setCountry, keyword, setKeyword] = useContext(DataContext);
+    const [searchCriteria, setSearchCriteria, country, setCountry] = useContext(DataContext);
 
     const handleChangeCountry = (e) => {
         setCountry(e.target.value)
     }
     const handleChangeCategories = (e) => {
-        setSearchCriteria(prev => [...prev, e.target.value])
-        console.log(searchCriteria)
+        setSearchCriteria(e.target.value)
     }
-    const handleSpecificSearch = (e) => {
-        if(e.key === 'Enter'){
-            console.log(keyword)
-            setKeyword(e.target.value)
-        }
-    }
-    
+
     return (
         <div className="navbar">
             <h1>DR<br/>OP</h1>
-            <div className="newsCategory">
+            <div className="selectOption">
                 <h4>Category</h4>
-                <div className="categories">
-                    <input type="checkbox"  value="business" id="business" onChange={handleChangeCategories}/>
-                    <label htmlFor="business">
-                        businnes
-                    </label>
-                    <input type="checkbox"  value="entertainment" id="entertainment" onChange={handleChangeCategories}/>
-                    <label htmlFor="entertainment">
-                        entertainment
-                    </label>
-                    <input type="checkbox"  value="technology" id="technology" onChange={handleChangeCategories}/>
-                    <label htmlFor="technology">
-                        technology
-                    </label>
-                    <input type="checkbox"  value="health" id="health" onChange={handleChangeCategories}/>
-                    <label htmlFor="health">
-                        health
-                    </label>
-                    <input type="checkbox"  value="science" id="science" onChange={handleChangeCategories}/>
-                    <label htmlFor="science">
-                        science
-                    </label>
-                    <input type="checkbox"  value="sports" id="sports" onChange={handleChangeCategories}/>
-                    <label htmlFor="sports">
-                        sports
-                    </label>
-                    <input type="checkbox"  value="general" id="general"/>
-                    <label htmlFor="general">
-                        general
-                    </label>
-                </div>
-            </div>
-            <div className="countrySelect">
-                <h4>Country</h4>
-                <select value={country} onChange={handleChangeCountry}>
-                    <option default value="gb">GB</option>
-                    <option value="us">US</option>
-                    <option value="it">IT</option>
-                    <option value="ca">CA</option>
-                    <option value="cn">CN</option>
-                    <option value="de">DE</option>
-                    <option value="fr">FR</option>
-                    <option value="gr">GR</option>
-                    <option value="jp">JP</option>
-                    <option value="nl">NL</option>
+                <select value={searchCriteria} onChange={handleChangeCategories}>
+                    <option default value=''>All</option>
+                    <option value="business">Businnes</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="general">General</option>
+                    <option value="health">Health</option>
+                    <option value="science">Science</option>
+                    <option value="sports">Sports</option>
+                    <option value="technology">Technology</option>
                 </select>
             </div>
-            <input type="text" placeholder="Search..." onKeyPress={handleSpecificSearch}></input>
+            <div className="selectOption">
+                <h4>Country</h4>
+                <select value={country} onChange={handleChangeCountry}>
+                    <option default value="gb">Uk</option>
+                    <option value="us">US</option>
+                    <option value="it">Italy</option>
+                    <option value="pt">Portugal</option>
+                    <option value="ca">Canada</option>
+                    <option value="cn">China</option>
+                    <option value="de">Germany</option>
+                    <option value="fr">France</option>
+                    <option value="gr">Greece</option>
+                    <option value="jp">Japan</option>
+                    <option value="nl">Netherland</option>
+                </select>
+            </div>
         </div>
     )
 }
