@@ -1,4 +1,4 @@
-import { useState, useEffect,useContext  } from 'react';
+import { useState, useEffect,useContext } from 'react';
 import { DataContext } from '../Context/ContextData';
 
 
@@ -21,7 +21,9 @@ function Newspage() {
                 return (
                     <div key={article.title}>
                         <div className="article">
-                            <div className="linkToArticle"><a target="blank" href={article.url}>{article.title}</a></div>
+                            <div className="linkToArticle">
+                                <a target="blank" href={article.url}>{article.title}</a>
+                            </div>
                             <div className="content">
                                 <p>{article.description}</p>
                             </div>

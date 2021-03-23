@@ -12,6 +12,8 @@
   }
 }
 .linkToArticle {
+  display: flex;
+  align-items: center;
   position: relative;
   font-family: boldFont;
   z-index: 1;
