@@ -21,8 +21,10 @@ function Newspage() {
                 return (
                     <div key={article.title}>
                         <div className="article">
-                            <div className="linkToArticle">
-                                <a target="blank" href={article.url}>{article.title}</a>
+                            <div className="headerArticle">
+                                <div className="linkToArticle">
+                                    <a target="blank" href={article.url}>{article.title}</a>
+                                </div>
                             </div>
                             <div className="content">
                                 <p>{article.description}</p>
