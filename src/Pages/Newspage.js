@@ -23,7 +23,7 @@ function Newspage() {
                         <div className="article">
                             <div className="headerArticle">
                                 <div className="linkToArticle">
-                                    <a target="blank" href={article.url}>{article.title}</a>
+                                    <a id="link" target="blank" href={article.url}>{article.title}</a>
                                 </div>
                             </div>
                             <div className="content">

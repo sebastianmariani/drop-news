@@ -15,7 +15,7 @@ function Homepage () {
                     P
                 </h1>
                 <div className="paragraphs">
-                    <h3>The pace of now-a-day news is becoming unsustainable,<br/>
+                    <h3 className="effect">The pace of now-a-day news is becoming unsustainable,<br/>
                         setting at record high the level of stress and <br/>
                         sadness in our community.</h3>
                     <h3>We are here to limit the the quantity of distraction<br/>
