@@ -3,7 +3,7 @@ import { createContext, useState } from 'react';
 export const DataContext = createContext();
 
 export const DataProvider = props => {
-    const [searchCriteria, setSearchCriteria] = useState('');
+    const [searchCriteria, setSearchCriteria] = useState('general');
     const [country, setCountry] = useState('gb');
 
     return (

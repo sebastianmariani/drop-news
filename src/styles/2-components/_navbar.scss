@@ -6,7 +6,8 @@
 }
 .selectors {
   display: flex;
-  width: 50%;
+  min-width: 500px;
+  width: 30%;
   justify-content: space-between;
 }
 .selectOption {
@@ -14,6 +15,7 @@
   align-items: center;
   justify-content: space-between;
   select {
+    font-size: inherit;
     margin-left: 10px;
     font-family: inherit;
     padding: 2px;
@@ -21,5 +23,46 @@
     &:focus {
       outline: none;
     }
+  }
+}
+.dropNavbar {
+  animation-delay: 5s;
+  animation: longDrop 4s ease-out forwards;
+}
+@keyframes longDrop {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(calc(100vh / 2));
+  }
+}
+@media screen and (max-width: $laptop) {
+  .navbar {
+    font-size: 0.7rem;
+  }
+  .selectors {
+    width: 60%;
+    min-width: 380px;
+  }
+  .dropNavbar {
+    width: 15px;
+    height: 22px;
+  }
+}
+@media screen and (max-width: $tablet) {
+  .navbar {
+    font-size: 0.6rem;
+    align-items: flex-start;
+  }
+  .selectors {
+    min-width: 200px;
+  }
+  .selectOption {
+    flex-direction: column;
+  }
+  .dropNavbar {
+    width: 12px;
+    height: 19px;
   }
 }

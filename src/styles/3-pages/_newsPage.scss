@@ -60,3 +60,14 @@ a {
   max-height: 0;
   opacity: 0;
 }
+@media screen and (max-width: $laptop) {
+  .news {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: $tablet) {
+  .news {
+    font-size: 0.6rem;
+    margin-left: 15px;
+  }
+}
