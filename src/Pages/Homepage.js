@@ -22,7 +22,7 @@ function Homepage () {
                         that we are subject from news, and allowing us to<br/>
                         keep up with what’s going on in the world without<br/>
                         the downsides and at your own tempo.</h3>
-                        <span className="linkContainer"><Link to="newspage">Start now</Link></span>
+                        <span className="linkContainer"><Link id="link" to="newspage">Start now</Link></span>
                 </div>
             </div>
             <img alt="Lamp" src={img}></img>

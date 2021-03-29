@@ -15,27 +15,39 @@ function Newspage() {
             .catch((err) =>
             console.log(err))
     }, [country, searchCriteria])
-    return (
-        <div className="news">
-            {news.map((article) => {
-                return (
-                    <div key={article.title}>
-                        <div className="article">
-                            <div className="headerArticle">
-                                <div className="linkToArticle">
-                                    <a id="link" target="blank" href={article.url}>{article.title}</a>
+
+    if (news.length > 0) {
+        return (
+            <div className="news">
+                {news.map((article) => {
+                    return (
+                        <div key={article.title}>
+                            <div className="article">
+                                <div className="headerArticle">
+                                    <div className="linkToArticle">
+                                        <a id="link" target="blank" href={article.url}>{article.title}</a>
+                                    </div>
+                                </div>
+                                <div className="content">
+                                    <p>{article.description}</p>
                                 </div>
                             </div>
-                            <div className="content">
-                                <p>{article.description}</p>
-                            </div>
                         </div>
-                    </div>
-                )
-            })}
-        </div>
-
-    )
+                    )
+                })}
+            </div>
+        )
+    } else {
+        return (
+            <div className="news">
+                <div className="noResult">
+                    <p>Something went wrong!<br/>
+                        Please try again.
+                    </p>
+                </div>
+            </div>
+        )
+    }
 }
 
 export default Newspage

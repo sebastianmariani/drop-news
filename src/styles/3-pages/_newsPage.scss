@@ -60,6 +60,12 @@ a {
   max-height: 0;
   opacity: 0;
 }
+.noResult {
+  text-align: center;
+  margin-top: 10vh;
+  line-height: 1.5rem;
+  font-size: inherit;
+}
 @media screen and (max-width: $laptop) {
   .news {
     font-size: 0.8rem;

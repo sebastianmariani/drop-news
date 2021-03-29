@@ -13,19 +13,10 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  a {
-    text-decoration: none;
-    color: black;
-    transition: color 300ms ease-in-out;
-    &:hover {
-      color: white;
-    }
-  }
 }
 .linkContainer {
   float: right;
   position: relative;
-  padding: 10px;
   font-family: boldFont;
   z-index: 1;
   &::before {
@@ -43,7 +34,6 @@ img {
   }
   &:hover::before {
     transform: scaleX(1);
-    color: white;
   }
 }
 .drop {
