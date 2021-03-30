@@ -1,5 +1,19 @@
 .news {
-  margin-left: 30px;
+  margin-left: 9px;
+  padding-left: 20px;
+  position: relative;
+  height: 2500px;
+  margin-bottom: 50px;
+}
+.news::after {
+  content: "";
+  position: absolute;
+  border-left: 2px solid #000;
+  top: 0;
+  left: 0;
+  bottom: 100%;
+  animation: trail 14.4s ease-out forwards;
+  animation-delay: 0.4s;
 }
 .article {
   margin: 5% 0;
@@ -66,14 +80,55 @@ a {
   line-height: 1.5rem;
   font-size: inherit;
 }
+@media screen and (max-width: 2416px) {
+  .news {
+    height: 2370px;
+  }
+  .news::after {
+    animation: trail 14.5s ease-out forwards;
+    animation-delay: 0.4s;
+  }
+}
+@media screen and (max-width: 2155px) {
+  .news {
+    height: 2250px;
+  }
+}
+@media screen and (max-width: 1874px) {
+  .news {
+    height: 2050px;
+  }
+}
+@media screen and (max-width: 1571px) {
+  .news {
+    height: 1900px;
+  }
+}
+@media screen and (max-width: 1282px) {
+  .news {
+    height: 1820px;
+  }
+}
 @media screen and (max-width: $laptop) {
   .news {
     font-size: 0.8rem;
+    margin-left: 6px;
+    height: 1550px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .news {
+    height: 1490px;
   }
 }
 @media screen and (max-width: $tablet) {
   .news {
     font-size: 0.6rem;
-    margin-left: 15px;
+    margin-left: 5px;
+    height: 1280px;
+  }
+  .news::after {
+    animation: trail 14.6s ease-out forwards;
+    animation-delay: 0.3s;
   }
 }

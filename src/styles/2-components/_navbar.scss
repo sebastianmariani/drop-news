@@ -26,15 +26,50 @@
   }
 }
 .dropNavbar {
-  animation-delay: 5s;
-  animation: longDrop 4s ease-out forwards;
+  animation-delay: 4s;
+  animation: longDrop 15s ease-out forwards;
 }
 @keyframes longDrop {
   0% {
     transform: translateY(0px);
   }
   100% {
-    transform: translateY(calc(100vh / 2));
+    transform: translateY(2640px);
+  }
+}
+@media screen and (max-width: 2416px) {
+  @keyframes longDrop {
+    100% {
+      transform: translateY(2500px);
+    }
+  }
+}
+@media screen and (max-width: 2155px) {
+  @keyframes longDrop {
+    100% {
+      transform: translateY(2370px);
+    }
+  }
+}
+@media screen and (max-width: 1874px) {
+  @keyframes longDrop {
+    100% {
+      transform: translateY(2160px);
+    }
+  }
+}
+@media screen and (max-width: 1571px) {
+  @keyframes longDrop {
+    100% {
+      transform: translateY(2000px);
+    }
+  }
+}
+@media screen and (max-width: 1282px) {
+  @keyframes longDrop {
+    100% {
+      transform: translateY(1900px);
+    }
   }
 }
 @media screen and (max-width: $laptop) {
@@ -46,8 +81,20 @@
     min-width: 380px;
   }
   .dropNavbar {
-    width: 15px;
-    height: 22px;
+    width: 14px;
+    height: 21px;
+  }
+  @keyframes longDrop {
+    100% {
+      transform: translateY(1620px);
+    }
+  }
+}
+@media screen and (max-width: 650px) {
+  @keyframes longDrop {
+    100% {
+      transform: translateY(1550px);
+    }
   }
 }
 @media screen and (max-width: $tablet) {
@@ -64,5 +111,10 @@
   .dropNavbar {
     width: 12px;
     height: 19px;
+  }
+  @keyframes longDrop {
+    100% {
+      transform: translateY(1325px);
+    }
   }
 }
