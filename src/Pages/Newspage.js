@@ -2,13 +2,14 @@ import { useState, useEffect,useContext } from 'react';
 import { DataContext } from '../Context/ContextData';
 import axios from 'axios';
 
+const URL = 'https://drop-news.herokuapp.com'
 
 function Newspage() {
     const [searchCriteria, setSearchCriteria, country, setCountry] = useContext(DataContext);
     const [news, setNews] = useState([]);
 
     useEffect( () => {
-        axios.get('/newspage', {
+        axios.get(`${URL}/newspage`, {
             params: {
                 country,
                 searchCriteria
