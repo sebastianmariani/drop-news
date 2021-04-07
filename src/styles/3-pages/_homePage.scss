@@ -19,22 +19,6 @@ img {
   position: relative;
   font-family: boldFont;
   z-index: 1;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: black;
-    z-index: -1;
-    transition: transform 300ms ease-in-out;
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-  &:hover::before {
-    transform: scaleX(1);
-  }
 }
 .drop {
   animation-delay: 5s;
@@ -119,5 +103,29 @@ img {
 @media screen and (max-width: $mobile) {
   .homepageText {
     font-size: 0.9rem;
+  }
+}
+@media (hover: hover) {
+  .linkContainer {
+    float: right;
+    position: relative;
+    font-family: boldFont;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: black;
+      z-index: -1;
+      transition: transform 300ms ease-in-out;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+    &:hover::before {
+      transform: scaleX(1);
+    }
   }
 }

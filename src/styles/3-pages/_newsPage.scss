@@ -17,38 +17,12 @@
 }
 .article {
   margin: 5% 0;
-  &:hover {
-    .content {
-      opacity: 1;
-      max-height: 10em;
-    }
-  }
 }
 .headerArticle {
   display: inline-block;
 }
 .linkToArticle {
-  display: flex;
-  align-items: center;
-  position: relative;
   font-family: boldFont;
-  z-index: 1;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: black;
-    z-index: -1;
-    transition: transform 300ms ease-in-out;
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-  &:hover::before {
-    transform: scaleX(1);
-  }
 }
 a {
   text-decoration: none;
@@ -59,13 +33,6 @@ a {
   display: flex;
   width: 100%;
   transition: color 300ms ease-in-out;
-  &:hover {
-    color: white;
-    .content {
-      opacity: 1;
-      max-height: 10em;
-    }
-  }
 }
 .content {
   padding: 0px 10px;
@@ -130,5 +97,43 @@ a {
   .news::after {
     animation: trail 14.6s ease-out forwards;
     animation-delay: 0.3s;
+  }
+}
+@media (hover: hover) {
+  .linkToArticle {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-family: boldFont;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: black;
+      z-index: -1;
+      transition: transform 300ms ease-in-out;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+    &:hover::before {
+      transform: scaleX(1);
+    }
+  }
+  #link:hover {
+    color: white;
+    .content {
+      opacity: 1;
+      max-height: 10em;
+    }
+  }
+  .article:hover {
+    .content {
+      opacity: 1;
+      max-height: 10em;
+    }
   }
 }
