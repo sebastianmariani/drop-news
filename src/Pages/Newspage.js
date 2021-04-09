@@ -5,7 +5,7 @@ import axios from 'axios';
 const URL = 'https://drop-news.herokuapp.com'
 
 function Newspage() {
-    const [searchCriteria, setSearchCriteria, country, setCountry] = useContext(DataContext);
+    const [searchCriteria, setSearchCriteria, country, setCountry,isLoaded, setIsLoaded] = useContext(DataContext);
     const [news, setNews] = useState([]);
 
     useEffect( () => {
@@ -16,8 +16,10 @@ function Newspage() {
             }
         }).then( response => {
             setNews(response.data)
+            setIsLoaded(true)
         }).catch( err => {
             console.log(err)
+            setIsLoaded(false)
         })
     }, [searchCriteria, country])
 
@@ -30,7 +32,7 @@ function Newspage() {
                             <div className="article">
                                 <div className="headerArticle">
                                     <div className="linkToArticle">
-                                        <a id="link" target="blank" href={article.url}>{article.title}</a>
+                                        <a className="link" target="blank" href={article.url}>{article.title}</a>
                                     </div>
                                 </div>
                                 <div className="content">
@@ -44,12 +46,10 @@ function Newspage() {
         )
     } else {
         return (
-            <div className="news">
-                <div className="noResult">
-                    <p>Something went wrong!<br/>
-                        Please try again.
-                    </p>
-                </div>
+            <div className="noResult">
+                <p>Something went wrong!<br/>
+                    Please try again.
+                </p>
             </div>
         )
     }

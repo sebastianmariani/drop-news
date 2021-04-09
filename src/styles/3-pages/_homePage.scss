@@ -4,9 +4,6 @@
   align-items: flex-end;
   margin: 20vh auto;
 }
-img {
-  width: 30%;
-}
 .homepageText {
   font-size: 1.5rem;
   font-family: boldFont;
@@ -20,7 +17,7 @@ img {
   font-family: boldFont;
   z-index: 1;
 }
-.drop {
+.dropHomepage {
   animation-delay: 5s;
   animation: drop 4s ease-out forwards;
 }
@@ -64,7 +61,7 @@ img {
   img {
     width: 40%;
   }
-  .drop {
+  .dropHomepage {
     width: 25px;
     height: 32px;
   }
@@ -86,7 +83,7 @@ img {
   .homepageText {
     font-size: 1rem;
   }
-  .drop {
+  .dropHomepage {
     width: 20px;
     height: 27px;
   }
