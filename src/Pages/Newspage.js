@@ -47,9 +47,7 @@ function Newspage() {
     } else {
         return (
             <div className="noResult">
-                <p>Something went wrong!<br/>
-                    Please try again.
-                </p>
+                <p>Loading...</p>
             </div>
         )
     }
