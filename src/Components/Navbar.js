@@ -29,7 +29,7 @@ function Navbar () {
                     <h4>Category</h4>
                     <select value={searchCriteria} onChange={handleChangeCategories}>
                         <option value="general">General</option>
-                        <option value="business">Businnes</option>
+                        <option value="business">Business</option>
                         <option value="entertainment">Entertainment</option>
                         <option value="health">Health</option>
                         <option value="science">Science</option>
